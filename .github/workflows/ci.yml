@@ -13,6 +13,8 @@ jobs:
       with:
         java-version: 11
     - name: 'Run java ... --module com.greetings --help'
+      shell: cmd
       run: AppArgsCountMatches.bat
     - name: 'Run java ... --module=com.greetings --help'
+      shell: cmd
       run: AppArgsCountDoesNotMatch.bat
