@@ -98,3 +98,24 @@ JavaVM args:
 ```
 
 First application arg index: `-1` with `argv[3] = --help`. ❌
+
+## With `=` ... sometimes, the launcher recovers with a warning
+
+`java --module-path=mods --module=com.greetings/com.greetings.Main --help`
+
+[Step 5, Line 76](https://github.com/sormuras/JDK-8234076/runs/303538563#step:5:76)
+
+```
+...
+Module is 'com.greetings/com.greetings.Main'
+App's argc is 1
+    argv[ 0] = '--help'
+5350 micro seconds to load main class
+----_JAVA_LAUNCHER_DEBUG----
+AppArgIndex: -1 points to (null)
+Warning: app args count doesn't match, 5 1
+passing arguments as-is.
+Greetings! [--help]
+```
+
+I guess, this may lead to spurious runtime errors, like described here: https://github.com/remkop/picocli/issues/863
