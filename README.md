@@ -3,6 +3,10 @@ JBS link: https://bugs.openjdk.java.net/browse/JDK-8234076
 
 CI build: https://github.com/sormuras/JDK-8234076/runs/303494999
 
+## Fixed since 2019-12-12, shipping with JDK 14
+
+https://github.com/openjdk/jdk/commit/ce7ede95eb1c3ad99d4654bdcbc2574013461bd3
+
 ## No `=` between `--module` and `NAME[/ENTRY-POINT]`
 
 `java --module-path=mods --module com.greetings/com.greetings.Main --help`
